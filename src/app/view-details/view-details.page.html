@@ -1,0 +1,116 @@
+<ion-content>
+  <ion-fab vertical="top" slot="fixed" class="header">
+    <ion-row nowrap size="12">
+      <ion-col size="2" class="ion_Column4">
+        <ion-button (click)="goBack()" shape='round' size="small" float-left class="btnSlide">
+          <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="5"></ion-col>
+      <ion-col size="1.5" class="ion_Column4">
+        <ion-button shape='round' size="small" class="btnSlide">
+          <ion-icon name="share-social-outline" color="dark"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1.5" class="ion_Column4">
+        <ion-button shape='round' size="small" class="btnSlide" routerLink="/wishlist">
+          <ion-icon name="bookmarks-outline" color="dark"></ion-icon>
+        </ion-button>
+        <ion-badge color="danger" shape='round' *ngIf="cartItemCount|async">{{cartItemCount|async}}</ion-badge>
+      </ion-col>
+      <ion-col size="2" class="ion_Column4">
+        <ion-button shape='round' size="small" class="btnSlide" routerLink="/bag">
+          <ion-icon name="cart-outline" color="dark" style="font-size: 22px;"></ion-icon>
+        </ion-button>
+        <ion-badge color="danger" shape='round' *ngIf="bagItemCount|async">{{bagItemCount|async}}</ion-badge>
+      </ion-col>
+    </ion-row>
+  </ion-fab>
+  <ion-slides [options]="sliderConfig" zoom>
+    <ion-slide *ngFor="let item of Items">
+      <ion-card class="card_one" (click)="viewImage()">
+        <ion-thumbnail class="swiper-zoom-container" [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+        </ion-thumbnail>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+<!------------------------------------- item1 ------------------------------------>
+ <div class="div_content">
+  <div class="title_label">
+    <h3>{{details.brand}}</h3>
+    <ion-label>{{details.description}}</ion-label>
+  </div>
+  <ion-row nowrap class="price_tag_row">
+    <ion-label class="price_tag_label"> ‎₹‎ {{details.offerPrice}}</ion-label>
+    <ion-label class="disc_price_tag_label"> ‎₹‎ {{details.actualprice}}</ion-label>
+    <ion-label class="oofer_label"> ( ‎10 %  OFF )</ion-label>
+  </ion-row>
+  <ion-label class="tax_label"> Inclusive of all taxes</ion-label>
+</div>
+  <ion-item-divider class="ion_divider">
+  </ion-item-divider>
+<div class="div_content">
+   <ion-row class="size_chart_row">
+      <ion-col size="8">
+        <ion-label *ngIf="!_isSizeSelected">SELECT SIZE</ion-label>
+        <ion-label *ngIf="_isSizeSelected">SIZE: {{size}}</ion-label>
+      </ion-col>
+      <ion-col size="4" class="sizeChart"><ion-label>SIZE CHART</ion-label></ion-col>
+    </ion-row>
+    <ion-row nowrap size="12" style="padding-top: 4px;">
+      <ion-col size="1.5" class="size_chart_btn" *ngIf="details.sizes.length >=1">
+        <ion-button shape='round' #btn_one color="dark" size="small" fill="outline" class="noripple" (click)="onClickSize(1,btn_one,btn_two,btn_three,btn_four,btn_five,btn_six)">
+          <ion-label>{{details.sizes[0].size}}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1.5" class="size_chart_btn" *ngIf="details.sizes.length >=2">
+        <ion-button shape='round' #btn_two color="dark" size="small" fill="outline" class="noripple" (click)="onClickSize(2,btn_one,btn_two,btn_three,btn_four,btn_five,btn_six)">
+          <ion-label>{{details.sizes[1].size}}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1.5" class="size_chart_btn" *ngIf="details.sizes.length >=3">
+        <ion-button shape='round' #btn_three color="dark" size="small" fill="outline" class="noripple" (click)="onClickSize(3,btn_one,btn_two,btn_three,btn_four,btn_five,btn_six)">
+          <ion-label>{{details.sizes[2].size}}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1.5" class="size_chart_btn" *ngIf="details.sizes.length >=4">
+        <ion-button shape='round' #btn_four color="dark" size="small" fill="outline" class="noripple" (click)="onClickSize(4,btn_one,btn_two,btn_three,btn_four,btn_five,btn_six)">
+          <ion-label>{{details.sizes[3].size}}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1.5" class="size_chart_btn" *ngIf="details.sizes.length >=5">
+        <ion-button shape='round' #btn_five color="dark" size="small" fill="outline" class="noripple" (click)="onClickSize(5,btn_one,btn_two,btn_three,btn_four,btn_five,btn_six)">
+          <ion-label>{{details.sizes[4].size}}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1.5" class="size_chart_btn" *ngIf="details.sizes.length >=6">
+        <ion-button shape='round' #btn_six color="dark" size="small" fill="outline" class="noripple" (click)="onClickSize(6,btn_one,btn_two,btn_three,btn_four,btn_five,btn_six)">
+          <ion-label>{{details.sizes[5].size}}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+ </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row size="12" class="footer_row">
+      <ion-col size="6">
+      <ion-button class="noripple" style="width:100%; --border-width:0.25px;" fill="outline" color="dark" (click)="addToWishList(details[0])">
+        <!-- <ion-icon name="bookmark"></ion-icon>
+        <ion-label style="font-family:Comfortaa;font-weight: 600;" *ngIf="details[0].faveourite;else other_content">WISHLISTED</ion-label>
+        <ng-template #other_content style="font-family:Comfortaa;font-weight: 600;">WISHLIST</ng-template> -->
+      </ion-button>
+    </ion-col>
+      <ion-col size="6">
+      <ion-button class="noripple" style="width:100%;" color="danger" (click)="addToBag(details.product_id)">
+        <ion-icon name="cart-outline" color="light" style="font-size: 22px;"></ion-icon>
+        <ion-label style="font-family:Comfortaa;font-weight: 600;" *ngIf="_isAddedInBag;else other_label">GO TO BAG</ion-label>
+        <ng-template #other_label style="font-family:Comfortaa;font-weight: 600;">ADD TO BAG</ng-template>
+      </ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

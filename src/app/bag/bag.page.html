@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar class="header" mode="md">
+    <ion-grid class="headerGrid">
+      <ion-row size="12" style="align-items: center" class="hdrRow">
+          <ion-back-button style="--icon-font-size: 21px;" defaultHref="/" size="2">
+          </ion-back-button>
+        <ion-title size="6" class="title">
+          SHOPPING BAG
+        </ion-title>
+        <ion-button color="transparent" class="btnHamburg" size="2">
+          <!-- <ion-icon slot="icon-only" style="color:black; font-size: 21px;" src="assets\icon\banner.svg"></ion-icon>
+          <ion-badge color="danger" ></ion-badge> -->
+        </ion-button>
+        <ion-button color="transparent" class="btnHamburg" size="2" routerLink="/wishlist">
+          <!-- <ion-icon slot="icon-only" style="color:black; font-size: 21px;" src="assets\icon\shopping-bag.svg"></ion-icon>
+          <ion-badge color="danger" ></ion-badge> -->
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content>
+      <ion-row class="card_row" *ngFor="let b of bagData">
+            <ion-item>
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+            </ion-thumbnail>
+              <ion-grid class="grid_Card">
+              <ion-label class="content_label">{{b['bagItem'].brand}}</ion-label>
+                <ion-label class="content_label">{{b['bagItem'].description}}</ion-label>
+                <ion-label class="content_label">Sold by: {{b['bagItem'].brand}}</ion-label>
+                <ion-row size="12" style="align-items: center;">
+                  <ion-col size="3.5" style="align-items: center; height: fit-content; --padding-start: unset;">
+                    <ion-item lines="none" text-center no-padding class="dropdown_item">
+                    <ion-label>Qty:</ion-label>
+                    <ion-select value="1" okText="Okay" cancelText="Dismiss">
+                      <ion-select-option value="1">1</ion-select-option>
+                      <ion-select-option value="2">2</ion-select-option>
+                      <ion-select-option value="3">3</ion-select-option>
+                      <ion-select-option value="4">4</ion-select-option>
+                      <ion-select-option value="5">5</ion-select-option>
+                      <ion-select-option value="6">6</ion-select-option>
+                      <ion-select-option value="7">7</ion-select-option>
+                      <ion-select-option value="8">8</ion-select-option>
+                      <ion-select-option value="9">9</ion-select-option>
+                      <ion-select-option value="10">10</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  </ion-col>
+                  <ion-col size="0.5"></ion-col>
+                  <ion-col size="4" style="align-items: center; height: fit-content; --padding-start: unset;">
+                    <ion-item lines="none" text-center no-padding class="dropdown_item">
+                    <ion-label>Size:</ion-label>
+                    <ion-select value="{{b.size}}" okText="Okay" cancelText="Dismiss">
+                      <ion-select-option *ngFor="let item of b['bagItem'].sizes" value="{{item['id']}}">{{item['size']}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  </ion-col><ion-col size="12"></ion-col>
+                </ion-row>
+                <ion-row nowrap class="price_tag_row">
+                  <ion-label class="price_tag_label"> ‎₹‎ {{b['bagItem'].offerPrice}}</ion-label>
+                  <ion-label class="disc_price_tag_label"> ‎₹‎ {{b['bagItem'].actualPrice}}</ion-label>
+                  <ion-label class="oofer_label">(50)%</ion-label>
+                </ion-row>
+                <ion-label class="tax_label"> Inclusive of all taxes</ion-label>
+              </ion-grid>
+        </ion-item>
+      <ion-item no-padding>
+      <ion-row size="12" class="footer_row" no-padding>
+        <ion-col size="3" no-padding (click)="removeFromBag(b)">
+        <!-- <ion-button style="width:100%; --border-width:0.25px;" color="light" no-padding>
+          <ion-icon name="bookmark"></ion-icon> -->
+          <ion-label style="font-family:Comfortaa;font-weight: 400;text-align-last: center;">REMOVE</ion-label>
+        <!-- </ion-button> -->
+      </ion-col>
+      <ion-col size="2" no-padding class="gray-border">
+       </ion-col>
+        <ion-col size="7" no-padding (click)="moveToWishList(b)">
+        <!-- <ion-button style="width:100%;" color="danger">
+          <ion-icon style="font-size:20px;" src="assets\icon\bag.svg"></ion-icon> -->
+          <ion-label style="font-family:Comfortaa;font-weight: 400;text-align-last: center;">MOVE TO WISHLIST</ion-label>
+        <!-- </ion-button> -->
+      </ion-col>
+      </ion-row>
+    </ion-item>
+    </ion-row>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row size="12" class="footer_row">
+      <ion-col size="6">
+      <!-- <ion-button class="noripple" style="width:100%; --border-width:0.25px;" fill="outline" color="dark"> -->
+        <ion-label style="font-size: 20px;" >$ 1,258</ion-label><br>
+        <ion-label style="font-size: 12px;" color="danger">VIEW DETAILS</ion-label>
+      <!-- </ion-button> -->
+    </ion-col>
+      <ion-col size="6">
+      <ion-button class="noripple" style="width:100%;" color="danger">
+        <ion-label>PLACE ORDER</ion-label>
+      </ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

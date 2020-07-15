@@ -1,0 +1,164 @@
+.loginForm {
+    height: 172px;
+
+    ion-button {
+        margin-top: 22px;
+        width: 94%;
+        margin-left: 3%;
+        --ripple-color: transparent;
+    }
+
+    ion-item {
+        --highlight-background: none;
+
+        ion-input {
+            --padding-start: 23px;
+        }
+
+        ion-icon {
+            font-size: 25px;
+            padding-bottom: 4px;
+
+            .input-has-focus .input-cover {
+                display: none;
+            }
+        }
+    }
+}
+
+// .ion-padding, [padding] {
+//     --padding-start: var(--ion-padding, 35px); 
+//     --padding-end: var(--ion-padding, 35px); 
+//     --padding-top: var(--ion-padding, 16px);
+//     --padding-bottom: var(--ion-padding, 16px);
+//     padding-left: var(--ion-padding, 16px);
+//     padding-right: var(--ion-padding, 16px);
+//     padding-top: var(--ion-padding, 16px);
+//     padding-bottom: var(--ion-padding, 16px);
+// }
+
+.seperateLine {
+    border: 1px solid black;
+}
+
+.dividerDiv {
+    display: flex;
+    white-space: nowrap;
+    overflow-x: auto;
+    align-items: center;
+
+    ion-item-divider {
+        width: 46%;
+        color: rgb(180, 180, 180);
+        border-color: rgb(180, 180, 180);
+        height: 0px;
+        min-height: 1px !important;
+    }
+
+    ion-label {
+        width: 8%;
+        text-align: center;
+    }
+}
+
+.fbButton {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    --ripple-color: transparent;
+    --box-shadow: none;
+
+    ion-icon {
+        color: white;
+    }
+
+    ion-label {
+        color: white;
+        margin: 0 5px;
+    }
+}
+
+.googleButton {
+    --ripple-color: transparent;
+    background-color: #F2F2F2;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    --box-shadow: none;
+
+    ion-label {
+        color: black;
+        margin: 0 5px;
+    }
+}
+
+.smsButton {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    --ripple-color: transparent;
+    --box-shadow: none;
+
+    ion-icon {
+        color: white;
+    }
+
+    ion-label {
+        color: white;
+        margin: 0 5px;
+    }
+}
+
+.ion-color-fbBlue {
+    --ion-color-base: var(--ion-color-fbBlue);
+    --ion-color-base-rgb: var(--ion-color-fbBlue-rgb);
+    --ion-color-contrast: var(--ion-color-fbBlue-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-fbBlue-contrast-rgb);
+    --ion-color-shade: var(--ion-color-fbBlue-shade);
+    --ion-color-tint: var(--ion-color-fbBlue-tint);
+}
+
+.ion-color-lightGreen {
+    --ion-color-base: var(--ion-color-lightGreen);
+    --ion-color-base-rgb: var(--ion-color-lightGreen-rgb);
+    --ion-color-contrast: var(--ion-color-lightGreen-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-lightGreen-contrast-rgb);
+    --ion-color-shade: var(--ion-color-lightGreen-shade);
+    --ion-color-tint: var(--ion-color-lightGreen-tint);
+}
+
+.logoImg {
+    height: 18%;
+    margin-top: 16%;
+
+    ion-img {
+        margin-top: 12%;
+        height: 85px;
+    }
+}
+
+.signUpBtn {
+    top: 82px;
+    p {
+        padding-left: 21px;
+    }
+
+    ion-chip {
+        padding-inline-start: unset;
+        padding-inline-end: unset;
+
+        label {
+            pointer-events: all !important;
+            color: #FFC0CB;
+            //color: #10dc60;
+        }
+    }
+}
+
+ion-card {
+    top: 80px;
+    ion-card-header {
+
+        ion-card-title {
+            text-align: center;
+            font-variant: small-caps;
+        }
+    }
+}

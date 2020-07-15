@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar class="header" mode="md">
+    <ion-grid class="headerGrid">
+      <ion-row size="12" style="align-items: center" class="hdrRow">
+          <ion-back-button style="--icon-font-size: 21px;" defaultHref="/" size="2">
+          </ion-back-button>
+        <ion-title size="6" class="title">
+          Wishlist
+          <p class="subtitle">{{cartItemCount | async}} items</p>
+        </ion-title>
+        <!-- <ion-button color="transparent" class="btnHamburg" size="2" routerLink="/wishlist">
+          <ion-icon name="bookmarks-outline" color="dark"></ion-icon>
+          <ion-badge color="danger" *ngIf="cartItemCount | async">{{ cartItemCount | async }}</ion-badge>
+        </ion-button> -->
+        <ion-col size="2"></ion-col>
+        <ion-button color="transparent" class="btnHamburg" size="2">
+          <ion-icon name="cart-outline" style="font-size: 22px;" color="dark"></ion-icon>
+          <ion-badge color="danger" *ngIf="cartItemCount | async">{{ cartItemCount | async }}</ion-badge>
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content>
+      <ion-row class="card_row" *ngFor="let item of products; let i = index">
+        <div *ngIf="i % 2 === 0"> 
+        <ion-col class="col_left" size="6">
+          <ion-card class="card_one">
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+              <div class="divFavIcon">
+                <ion-button color="transparent" slot="icon-only" (click)="removeCartItem(products[i])">
+                  <ion-icon name="close-circle"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-thumbnail>
+            <ion-card-content>
+              <ion-grid class="grid_Card">
+                <ion-row size="12" style="align-items: center;">
+                  <ion-col size="10" style="align-items: center; height: fit-content;">
+                  <ion-label class="product_desc">{{products[i].name}}</ion-label>
+                  </ion-col>
+                  <!-- <ion-col size="2">
+                    <ion-button color="transparent" class="bookMarkBtn" fill="clear">
+                      <ion-icon #iconEv slot="icon-only" src="assets/icon/bookmarkSel.svg"></ion-icon>
+                    </ion-button> 
+                  </ion-col>-->
+                </ion-row>
+                <!-- <ion-row>
+                  <ion-label class="content_label">{{products[i].name}}</ion-label>
+                </ion-row> -->
+                <ion-row nowrap class="price_tag_row">
+                  <ion-label class="price_tag_label"> ${{products[i].price}}</ion-label>
+                  <ion-label class="disc_price_tag_label"> ${{products[i].actualprice}}</ion-label>
+                  <ion-label class="oofer_label"> (36% OFF)</ion-label>
+                </ion-row>
+                <ion-label class="tax_label"> Inclusive of all taxes</ion-label>
+              </ion-grid>
+              <ion-item-divider></ion-item-divider>
+              <ion-row class="footer_row">
+                <ion-button fill="outline">
+                  <ion-label style="font-family:Sheep-sans; font-weight: 400; color: #acacac;">MOVE TO BAG</ion-label>
+                </ion-button>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col class="col_right" size="6" *ngIf="i !== products.length-1">
+          <ion-card class="card_one">
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+              <div class="divFavIcon">
+                <ion-button color="transparent" slot="icon-only" (click)="removeCartItem(products[i+1])">
+                  <ion-icon name="close-circle"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-thumbnail>
+            <ion-card-content>
+              <ion-grid class="grid_Card">
+                <ion-row size="12" style="align-items: center;">
+                  <ion-col size="10" style="align-items: center; height: fit-content;">
+                    <ion-label class="product_desc">{{products[i+1].name}}</ion-label>
+                  </ion-col>
+                  <!-- <ion-col size="2">
+                    <ion-button color="transparent" class="bookMarkBtn" fill="clear">
+                      <ion-icon #iconEv1 slot="icon-only" src="assets/icon/bookmarkSel.svg"></ion-icon>
+                    </ion-button>
+                  </ion-col> -->
+                </ion-row>
+                <!-- <ion-row>
+                  <ion-label class="content_label" >{{products[i+1].name}}</ion-label>
+                </ion-row> -->
+                <ion-row nowrap class="price_tag_row">
+                  <ion-label class="price_tag_label" > ${{products[i+1].price}}</ion-label>
+                  <ion-label class="disc_price_tag_label" > ${{products[i+1].actualprice}}</ion-label>
+                  <ion-label class="oofer_label"> (36% OFF)</ion-label>
+                </ion-row>
+                <ion-label class="tax_label"> Only Few Left!</ion-label>
+              </ion-grid>
+              <ion-item-divider></ion-item-divider>
+              <ion-row class="footer_row">
+                <ion-button fill="outline">
+                  <ion-label style="font-family:Sheep-sans; font-weight: 400; color: #acacac;">MOVE TO BAG</ion-label>
+                </ion-button>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </div>
+      </ion-row>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

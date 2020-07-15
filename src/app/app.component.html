@@ -1,0 +1,45 @@
+<ion-app>
+      <ion-menu contentId="content" side="start">
+        <ion-header no-border>
+          <ion-toolbar class="header">
+            <ion-grid class="headerGrid">
+              <ion-row size="12" style="align-items: center" class="hdrRow">
+                <ion-title size="10" class="title">
+                  Menu
+                </ion-title>
+                <ion-menu-button color="transparent" class="btnHamburg" size="2">
+                  <ion-icon class="iconHamburg" src="assets\icon\menu.svg"></ion-icon>
+                </ion-menu-button>
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-menu-toggle>
+            <ion-item [routerLink]="['/']" lines="none">             
+              <ion-icon name="home" slot="start"></ion-icon>
+              <ion-label>SHOP</ion-label>           
+            </ion-item>
+            <ion-item [routerLink]="['/login']" lines="none">
+              <ion-icon name="person" slot="start"></ion-icon>
+              <ion-label>NEWS</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['/register']" lines="none">
+              <ion-icon name="chatbubbles" slot="start"></ion-icon>
+              <ion-label>CONTACT US </ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['/login']" lines="none">
+                <ion-icon name="chatbubbles" slot="start"></ion-icon>
+                <ion-label>ABOUT US </ion-label>
+              </ion-item>
+            <ion-item [routerLink]="['/login']" lines="none">
+              <ion-icon name="settings" slot="start"></ion-icon>
+              <ion-label>LOGIN</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-app>

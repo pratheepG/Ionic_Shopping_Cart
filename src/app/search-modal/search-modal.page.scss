@@ -1,0 +1,79 @@
+.item_sliding {
+  height: fit-content;
+
+  .item {
+    --padding-start: unset;
+    margin-left: 11px;
+    margin-top: 5px;
+    height: 28px;
+    --min-height: unset;
+    --highlight-height: 1px;
+
+    ion-label {
+      margin-left: 9px;
+      font-size: 15px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+}
+
+.div_searchlist {
+  margin-top: 8px;
+}
+
+.headerGrid {
+  background-color: #ffffff;
+  height: 48px;
+  margin-top: unset;
+  padding-inline-start: unset;
+  padding-inline-end: unset;
+  padding-bottom: unset;
+  padding-top: unset;
+}
+
+.hdrRow {
+  margin-top: -5px;
+  margin-top: unset;
+  align-items: center;
+  height: 48px;
+}
+
+.btnHamburg {
+  --box-shadow: none;
+  --padding-start: unset;
+  --padding-end: unset;
+  width: 10%;
+  font-size: 18px;
+}
+
+.search_bar {
+  --padding-start: unset;
+}
+
+.btnSlide {
+  ion-icon {
+    font-size: 21px;
+    position: absolute;
+  }
+
+  --box-shadow: none;
+  width: 40px;
+  height: 40px;
+  margin-right: unset;
+  margin-left: unset;
+  border-radius: unset;
+  border: 0px;
+  --padding-start:unset;
+  --padding-end:unset;
+  --background:transparent;
+  --background-focused:transparent;
+  --background-hover:transparent;
+  --color:transparent;
+  --color-activated:transparent;
+  --color-focused:transparent;
+}

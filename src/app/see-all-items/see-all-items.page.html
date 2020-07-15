@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid class="headerGrid">
+      <ion-row size="12" style="align-items: center" class="hdrRow">
+          <ion-back-button style="--icon-font-size: 21px;" defaultHref="/" size="1.5">
+          </ion-back-button>
+        <ion-title size="6" class="title">
+          Full Sleev Shirts
+          <p class="subtitle">{{products.length}} items</p>
+        </ion-title>
+        <ion-button color="transparent" class="btnHamburg" size="1.5" routerLink="/wishlist">
+          <ion-icon name="search-outline" color="dark"></ion-icon>
+        </ion-button>
+        <ion-button color="transparent" class="btnHamburg" size="1.5" routerLink="/wishlist">
+          <ion-icon name="bookmarks-outline" color="dark"></ion-icon>
+          <ion-badge color="danger" *ngIf="cartItemCount | async">{{ cartItemCount | async }}</ion-badge>
+        </ion-button>
+        <ion-button color="transparent" class="btnHamburg" size="1.5">
+          <ion-icon name="cart-outline" color="dark" style="font-size: 23px;"></ion-icon>
+          <ion-badge color="danger" *ngIf="bagItemCount | async">{{ bagItemCount | async }}</ion-badge>
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content>
+      <ion-row class="card_row" *ngFor="let item of products; let i = index"> 
+        <div *ngIf="i % 2 === 0">
+        <ion-col class="col_left" size="6">
+          <ion-card class="card_one" (click)="gotoDetailsPage(products[i])">
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+            </ion-thumbnail>
+            <ion-card-content>
+              <ion-grid class="grid_Card">
+                <ion-row size="12" style="align-items: center;">
+                  <ion-col size="10" style="align-items: center; height: fit-content;">
+                  <ion-label class="product_desc">{{products[i].description}}</ion-label>
+                  </ion-col>
+                  <ion-col size="2">
+                    <!-- <ion-button (click)="addtoWishList($event,iconEv,products[i])" color="transparent" class="bookMarkBtn" fill="clear">
+                      <ion-icon #iconEv slot="icon-only" [src]="products[i].faveourite?'assets/icon/bookmarkUnsel.svg':'assets/icon/bookmarkSel.svg'"></ion-icon>
+                    </ion-button> -->
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="content_label">{{products[i].brand}}</ion-label>
+                </ion-row>
+                <ion-row nowrap class="price_tag_row">
+                  <ion-label class="price_tag_label"> ₹{{products[i].offerPrice}}</ion-label>
+                  <ion-label class="disc_price_tag_label"> ₹{{products[i].actualPrice}}</ion-label>
+                  <ion-label class="oofer_label"> 36% OFF</ion-label>
+                </ion-row>
+                <ion-label class="tax_label"> Only Few Left!</ion-label>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col class="col_right" size="6" *ngIf="i !== products.length-1">
+          <ion-card class="card_one" (click)="gotoDetailsPage(products[i+1])">
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+            </ion-thumbnail>
+            <ion-card-content>
+              <ion-grid class="grid_Card">
+                <ion-row size="12" style="align-items: center;">
+                  <ion-col size="10" style="align-items: center; height: fit-content;">
+                    <ion-label class="product_desc">{{products[i+1].description}}</ion-label>
+                  </ion-col>
+                  <ion-col size="2">
+                    <!-- <ion-button (click)="addtoWishList($event,iconEv1,products[i+1])" color="transparent" class="bookMarkBtn" fill="clear">
+                      <ion-icon #iconEv1 slot="icon-only" [src]="products[i+1].faveourite?'assets/icon/bookmarkUnsel.svg':'assets/icon/bookmarkSel.svg'"></ion-icon>
+                    </ion-button> -->
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="content_label">{{products[i+1].brand}}</ion-label>
+                </ion-row>
+                <ion-row nowrap class="price_tag_row">
+                  <ion-label class="price_tag_label"> ₹{{products[i+1].offerPrice}}</ion-label>
+                  <ion-label class="disc_price_tag_label"> ₹{{products[i+1].actualPrice}}</ion-label>
+                  <ion-label class="oofer_label"> 36% OFF</ion-label>
+                </ion-row>
+                <ion-label class="tax_label"> Only Few Left!</ion-label>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </div>
+      </ion-row>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

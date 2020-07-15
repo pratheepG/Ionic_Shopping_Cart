@@ -1,0 +1,258 @@
+//---------------headerCSS---------------//
+.header{
+//   height: 45px;
+//  background-color: #ffffff;
+ font-size: 15px;
+ height: 50px;
+ --min-height: 45px;
+ background-color: #ffffff;
+
+}
+.headerGrid {
+  // background-color: #ffffff;
+  // height: 40px;
+  // margin-top: -18px;
+    background-color: #ffffff;
+    height: 48px;
+    margin-top: unset;
+    -webkit-padding-start: unset;
+    padding-inline-start: unset;
+    -webkit-padding-end: unset;
+    padding-inline-end: unset;
+    padding-bottom: unset;
+    padding-top: unset;
+}
+.hdrRow {
+  // margin-top: -5px;
+  // align-items: center;
+  // height: 40px;
+    margin-top: unset;
+    align-items: center;
+    height: 48px;
+}
+.btnHamburg {
+  --box-shadow:none;
+  --padding-start:10;
+}
+.title {
+  height: fit-content;
+  width: fit-content;
+  margin-left: -13px;
+}
+.iconHamburg {
+  font-size: 17px;
+}
+.logoImgtitle {
+  width: 60%;
+}
+ion-badge {
+    color: #ffffff;
+    position: absolute;
+    top: 4px;
+    right: -5px;
+    font-size: 7px;
+    border-radius: 100%;
+}
+//---------------logoImgCSS--------------//
+.logoImg {
+  width: 55%;
+  padding-left: 2%;
+  *{
+    width: 75%;
+  }
+}
+//---------------scrollCSS---------------//
+.wide-as-needed {
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: fit-content;
+  &::-webkit-scrollbar {
+    display: none;
+ }
+  .scroll-item {
+    flex: 0 0 auto;
+ }
+}
+//------------roundButtonsCSS----------//
+.gridButtonSlide {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  width: max-content;
+  display: block;
+}
+.btnSlide {
+  --box-shadow:none;
+  ion-icon {
+    font-size: 24px;
+  }
+  width: 65px;
+  height: 65px;
+  margin-right: 12px;
+  margin-left: 12px;
+  border-radius: 50%;
+  border: 1px;
+}
+.labelBtnSlide {
+  ion-label {
+    font-family:'Comfortaa';
+    font-weight: 400;
+    color: #000000;
+    font-size: 13px;
+  }
+  justify-content: center
+}
+//-----------firstCardViewCSS------------//
+.welcome-card {
+  width: 250px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 0% 14%;
+  .card-content-md {
+    padding-left: unset;
+    padding-right: unset;
+    padding-bottom: unset;
+    padding-top: unset;
+  }
+  box-shadow: none;
+}
+.divFavIcon {
+  text-align-last: end;
+  ion-button {
+    --box-shadow:none;
+  }
+}
+.divFirstCard{
+  height: 128px;
+  width: 100%;
+  margin-top: 128px;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
+  background-position: 50% 50%;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: auto auto;
+}
+.divFirstCardText {
+  padding-top: 53px;
+  text-align: justify;
+  padding-left: 3px;
+  font-size: 16px;
+  font-family:'Comfortaa';
+  font-weight: 400;
+  color: #000000;
+}
+//---------secondCardViewCSS----------------//
+.featureProducts-card {
+  width: 95%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 0% 14%;
+  .card-content-md {
+    padding-top: 0px;
+    margin-left: -17px;
+  }
+  box-shadow: none;
+}
+.divFeatureProductsCard {
+  height: 200px;
+  width: 51%;
+  background-image: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%); 
+  background-position: 50% 50%;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: auto auto;
+}
+.divFeatureProductsCardText {
+  padding-top: 70px;
+  padding-right: 71px;
+  font-size: 20px;
+  font-family:'Comfortaa';
+  font-weight: 400;
+  color: #000000;
+}
+//---------thirdCardViewCSS-----------------//
+.featureProd-card {
+  width: 120px;
+  height: 250px;
+  box-shadow: none;
+  ion-thumbnail {
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 0% 14%;
+    height: 170px;
+    width: 100%;
+  }
+  ion-card-content {
+    height: 80px;
+    background-color: #ffffff;
+    padding-left: unset;
+    padding-right: unset;
+    padding-right: 71px;
+    font-size: 14px;
+    font-family: "Comfortaa";
+    font-weight: 200;
+    color: #000000;
+    text-align: justify;
+  }
+}
+//---------4thCardViewCSS------------------//
+.menCollections-card {
+  width: 165px;
+  height: 310px;
+  box-shadow: none;
+  ion-thumbnail {
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 0% 14%;
+    height: 230px;
+    width: 100%;
+  }
+  ion-card-content {
+    height: 80px;
+    background-color: #ffffff;
+    padding-left: unset;
+    padding-right: unset;
+    padding-right: 71px;
+    font-size: 14px;
+    font-family: "Comfortaa";
+    font-weight: 200;
+    color: #000000;
+    text-align: justify;
+  }
+}
+//--------commonHorizantalScrollCSS-------//
+div[scrollx=true] {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+     display: none;
+  }
+   .scroll-item {
+     flex: 0 0 auto;
+  }
+}
+//---------------------------------------//
+.tabsOfCardsForwardArrowText{
+  font-size: 10px;
+  color: #1e2023;
+  --box-shadow:none;
+    --background: #ffffff;
+    --border-color: #ffffff;
+    --color:#ffffff;
+    pointer-events: none;
+    height: 8px;
+    width: 95px;
+    *{
+      font-size: 12px;
+    }
+    .displayed {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+//----------------------ICONS-------------//

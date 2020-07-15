@@ -1,0 +1,298 @@
+.header {
+    // height: 45px;
+    // background-color: #ffffff;
+    font-size: 15px;
+    height: 50px;
+    --min-height: 45px;
+    background-color: #ffffff;
+}
+
+.card_one {
+    width: auto;
+    height: 326px;
+    margin-left: unset;
+    margin-right: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    -webkit-margin-start: unset;
+    margin-inline-start: unset;
+    -webkit-margin-end: unset;
+    margin-inline-end: unset;
+    box-shadow: none;
+
+    ion-thumbnail {
+        background-repeat: no-repeat;
+        background-size: 110%;
+        background-position: 0% 14%;
+        height: 240px;
+        width: 100%;
+    }
+
+    ion-card-content {
+        height: 80px;
+        background-color: #ffffff;
+        padding-left: unset;
+        padding-right: unset;
+        padding-top: 2px;
+        padding-bottom: unset;
+        font-size: 14px;
+        font-family: "Comfortaa";
+        font-weight: 200;
+        color: #000000;
+        text-align: justify;
+    }
+}
+
+ion-item-divider {
+    width: 100%;
+    color: f2f2f2;
+    border-color: f2f2f2;
+    height: 0px;
+    min-height: 1px !important;
+}
+
+.grid_Card {
+    width: 100%;
+    padding-bottom: unset;
+    padding-top: unset;
+    padding-inline-end: unset;
+
+    ion-row {
+        height: 21px;
+    }
+}
+
+.bookMarkBtn {
+    --padding-start: unset;
+    --padding-end: unset;
+    --box-shadow: none;
+    font-size: 10px;
+    height: 20px;
+    --ripple-color: transparent;
+}
+
+.col_left {
+    // border-top-color: rgba(0, 0, 0, 0.12);
+    // border-top-style: solid;
+    // border-top-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.12);
+    border-right-style: solid;
+    border-right-width: .5px;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    // border-left-color: rgba(0, 0, 0, 0.12);
+    // border-left-style: solid;
+    // border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+
+.col_right {
+    // border-right-color: rgba(0, 0, 0, 0.12);
+    // border-right-style: solid;
+    // border-right-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgba(0, 0, 0, 0.12);
+    border-left-style: solid;
+    border-left-width: .5px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+
+.card_row {
+    --ion-grid-column-padding: auto;
+    white-space: nowrap;
+
+    ion-item {
+        --padding-start: 0.5%;
+        --inner-padding-end: auto;
+        width: 100%;
+
+        ion-thumbnail {
+            background-repeat: no-repeat;
+            background-size: 110%;
+            background-position: 0% 14%;
+            background-position: 0% 14%;
+            height: 120px;
+            width: 110px;
+        }
+    }
+}
+
+.price_tag_row {
+    //padding-top: 6px;
+    height: 25px;
+
+    .price_tag_label {
+        padding-right: 9px;
+        font-family: "Comfortaa";
+        font-weight: 400;
+        color: #000000;
+    }
+
+    .disc_price_tag_label {
+        padding-right: 6px;
+        text-decoration: line-through;
+        font-family: "Comfortaa";
+        font-weight: 200;
+        color: #acacac;
+    }
+
+    .oofer_label {
+        font-family: 'Comfortaa';
+        font-weight: 200;
+        color: #ff7300;
+    }
+}
+
+.tax_label {
+    color: rgb(77, 224, 134);
+    font-size: 12px;
+}
+
+.content_label {
+    font-family: 'Comfortaa';
+    font-weight: 200;
+    color: #a0a0a0;
+}
+
+div {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll-item {
+        flex: 0 0 auto;
+    }
+}
+
+.headerGrid {
+    // background-color: #ffffff;
+    // height: 40px;
+    // margin-top: -18px;
+    background-color: #ffffff;
+    height: 48px;
+    margin-top: unset;
+    -webkit-padding-start: unset;
+    padding-inline-start: unset;
+    -webkit-padding-end: unset;
+    padding-inline-end: unset;
+    padding-bottom: unset;
+    padding-top: unset;
+}
+
+.hdrRow {
+    // margin-top: -5px;
+    // align-items: center;
+    // height: 40px;
+    margin-top: unset;
+    align-items: center;
+    height: 48px;
+}
+
+.btnHamburg {
+    --box-shadow: none;
+    --padding-start: 10px;
+
+    ion-badge {
+        color: #ffffff;
+        position: absolute;
+        top: 5px;
+        right: 13px;
+        font-size: 8px;
+        border-radius: 100%;
+    }
+}
+
+ion-toolbar {
+    font-size: 15px;
+    font-family: "Comfortaa";
+    font-weight: 400;
+    color: #000000;
+    .title {
+        padding-inline-start: unset;
+        padding-inline-end: unset;
+        font-size: 16px;
+        font-family: "Sheep-sans";
+        font-weight: 400;
+        color: #000000;
+    }
+    .subtitle {
+        font-size: 11px;
+        font-family: "Comfortaa";
+        font-weight: 200;
+        color: #000000;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        margin-inline-start: unset;
+        margin-inline-end: unset;
+    }
+}
+
+.dropdown_item {
+    height: 16px;
+    --padding-start: auto;
+
+    ion-label {
+        --min-height: unset;
+        margin-top: unset;
+        margin-bottom: auto;
+        font-size: 15px;
+        font-family: "Comfortaa";
+        font-weight: 200;
+        color: #000000;
+        background-color: #8080801f;
+    }
+
+    ion-select {
+        --min-height: unset;
+        --padding-top: unset;
+        --padding-end: unset;
+        margin-bottom: auto;
+        --padding-start: unset;
+        font-size: 14px;
+        top: 0px;
+        background-color: #8080801f;
+
+        button {
+            padding: unset;
+            height: 18px;
+        }
+    }
+}
+
+.footer_row {
+    width: 98%;
+    padding-inline-start: 1%;
+
+    ion-col {
+        padding-inline-start: unset;
+    }
+}
+
+.gray-border {
+    border-right: 1px solid #f2f2f2;
+}
+
+//-------------------footer------------------------------------//
+.footer_row {
+    width: 98%;
+    padding-inline-start: 2%;
+    ion-col{
+        padding-inline-start: unset;
+    }
+}

@@ -1,0 +1,48 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-grid class="headerGrid">
+      <ion-row size="12" style="align-items: center" class="hdrRow">
+    <ion-back-button style="--icon-font-size: 21px;" defaultHref="/" size="1.5">
+    </ion-back-button>
+  <ion-title size="6" class="title">
+    Sign Up
+  </ion-title>
+</ion-row>
+</ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Sign Up</ion-card-title>
+    </ion-card-header>
+  <form #form="ngForm" (ngSubmit)="register(form)" method="post">
+    <ion-item>
+        <ion-label position="floating">Email Address*</ion-label>
+        <ion-input ngModel name="fName"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Password*</ion-label>
+      <ion-input ngModel name="lName"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Mobile Number(For Updates)*</ion-label>
+      <ion-input type="email" ngModel name="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Full Name*</ion-label>
+      <ion-input type="password" ngModel name="password"></ion-input>
+    </ion-item>
+  
+    <ion-button type="submit" expand="block" color="transparent" style="background-color: #FFC0CB;">Register</ion-button>
+  </form>
+</ion-card>
+  <ion-item lines="none" class="signUpBtn">    
+      <p text-center>Already have a account?</p>
+      <ion-chip color="transparent" mode="ios" (click)="loginModal()">
+        <label>Log In</label>
+      </ion-chip></ion-item>
+</ion-content>  

@@ -1,0 +1,227 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header" mode="md">
+    <ion-grid class="headerGrid">
+      <ion-row style="align-items: center" class="hdrRow">
+        <ion-menu-button color="transparent" class="btnHamburg" size="2">
+          <ion-icon class="iconHamburg" src="assets\icon\menu.svg"></ion-icon>
+        </ion-menu-button>
+        <ion-title size="4" class="title">
+          <div class="logoImgtitle">
+            <ion-img src="assets/images/logo.png" #header style="height: 0px; margin-left: 12px;"></ion-img>
+          </div>
+        </ion-title>
+        <ion-button color="transparent" (click)="onClickSearch()" class="btnHamburg" size="1.5">
+          <ion-icon name="search-outline" color="dark"></ion-icon>
+        </ion-button>
+        <ion-button color="transparent" class="btnHamburg" size="1.5">
+          <ion-icon name="notifications-outline" color="dark"></ion-icon>
+          <!-- <ion-badge color="danger" *ngIf="cartItemCount | async">{{ cartItemCount | async }}</ion-badge> -->
+        </ion-button>
+        <ion-button color="transparent" class="btnHamburg" size="1.5" routerLink="/wishlist">
+          <ion-icon name="bookmarks-outline" color="dark"></ion-icon>
+          <ion-badge color="danger" *ngIf="cartItemCount | async">{{ cartItemCount | async }}</ion-badge>
+        </ion-button>
+        <ion-button color="transparent" class="btnHamburg" size="1.5" (click)="goToBag()">
+          <ion-icon name="cart-outline" color="dark" style="font-size: 22px;"></ion-icon>
+          <ion-badge color="danger" *ngIf="bagItemCount | async">{{ bagItemCount | async }}</ion-badge>
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" appHideHeader [header]="header" [fullscreen]="true">
+  <!-- <ion-infinite-scroll class="contentMain">
+    <ion-infinite-scroll-content > -->
+      <div class="logoImg">
+        <ion-img src="assets/images/logo.png"></ion-img>
+      </div>
+      <div class="wide-as-needed">
+        <ion-grid class="gridButtonSlide">
+          <ion-row>
+            <ion-col>
+              <ion-row>
+                <ion-button color="transparent" class="btnSlide" style="background-color:#def3ff33;">
+                  <ion-icon src="assets\icon\short-pants.svg"></ion-icon>
+                </ion-button>
+              </ion-row>
+              <ion-row class="labelBtnSlide">
+                <ion-label>Men</ion-label>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-button color="transparent" class="btnSlide" style="background-color:#b3ffb63b;">
+                  <ion-icon src="assets\icon\shirt-and-tie.svg"></ion-icon>
+                </ion-button>
+              </ion-row>
+              <ion-row class="labelBtnSlide">
+                <ion-label>T-Shirts</ion-label>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-button color="transparent" class="btnSlide" style="background-color:#ffc7c746;">
+                  <ion-icon src="assets\icon\underwear.svg"></ion-icon>
+                </ion-button>
+              </ion-row>
+              <ion-row class="labelBtnSlide">
+                <ion-label>Clothing</ion-label>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-button color="transparent" class="btnSlide" style="background-color:#f2c7ff34;">
+                  <ion-icon src="assets\icon\dress.svg"></ion-icon>
+                </ion-button>
+              </ion-row>
+              <ion-row class="labelBtnSlide">
+                <ion-label>Dresses</ion-label>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-button color="transparent" class="btnSlide" style="background-color:#c7fff94b;">
+                  <ion-icon src="assets\icon\briefcase.svg"></ion-icon>
+                </ion-button>
+              </ion-row>
+              <ion-row class="labelBtnSlide">
+                <ion-label>Bags</ion-label>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- ------------First Card------------ -->
+      <div class="scroll" scrollX="true" style="white-space: nowrap;">
+        <span style="width: fit-content" *ngFor="let item of Items">
+          <ion-card class="welcome-card" style="background-image :url('assets/images/male.jpg')">
+            <ion-card-content (click)="onClickOfCard()">
+              <div class="divFavIcon">
+                <ion-button (click)="favClick($event,iconEv)" color="transparent" slot="icon-only" style="font-size: 15px;">
+                  <ion-icon #iconEv src="assets/icon/heart.svg"></ion-icon>
+                </ion-button>
+              </div>
+              <div class="divFirstCard">
+                <div class="divFirstCardText">
+                  <ion-label>Full Sleev Shirt</ion-label><br>
+                  <ion-label>Roadster</ion-label><br>
+                  <ion-label>$30.00</ion-label>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </span>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------Second Card------------ -->
+      <div>
+        <ion-card class="featureProducts-card" style="background-image :url('assets/images/male.jpg')">
+          <ion-card-content>
+            <div class="divFeatureProductsCard">
+              <div class="divFeatureProductsCardText">
+                <ion-label>For Slim</ion-label><br>
+                <ion-label>& Beauty</ion-label><br>
+                <ion-label>40% OFF</ion-label>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------ShowAll Btn------------ -->
+      <div>
+        <ion-grid>
+          <ion-row size="12" style="align-items: baseline; height: fit-content;">
+            <ion-col size="9" style="text-align: start; height: fit-content;">
+              <ion-label class="tabsOfCardsText">Featured Products</ion-label>
+            </ion-col>
+            <ion-col size="3" style="align-items: end;">
+              <ion-chip class="tabsOfCardsForwardArrowText">
+                <ion-label>Show All</ion-label>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------Third Card------------- -->
+      <div class="scroll" scrollX="true" style="white-space: nowrap;">
+        <span style="width: fit-content" *ngFor="let item of Items">
+          <ion-card class="featureProd-card">
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+            </ion-thumbnail>
+            <ion-card-content>
+              <ion-label>Full Sleev Shirt</ion-label><br>
+              <ion-label>Roadster</ion-label><br>
+              <ion-label>$30.00</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </span>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------ShowAll Btn------------ -->
+      <div>
+        <ion-grid>
+          <ion-row size="12" style="align-items: baseline; height: fit-content;">
+            <ion-col size="9" style="text-align: start; height: fit-content;">
+              <ion-label class="tabsOfCardsText">Man Collections</ion-label>
+            </ion-col>
+            <ion-col size="3" style="align-items: end;">
+              <ion-chip class="tabsOfCardsForwardArrowText">
+                <ion-label>Show All</ion-label>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------4th Card--------------- -->
+      <div class="scroll" scrollX="true" style="white-space: nowrap;">
+        <span style="width: fit-content" *ngFor="let item of Items">
+          <ion-card class="menCollections-card">
+            <ion-thumbnail [ngStyle]="{'background-image':'url(assets/images/male.jpg)'}">
+            </ion-thumbnail>
+            <ion-card-content>
+              <ion-label>Full Sleev Shirt</ion-label><br>
+              <ion-label>Roadster</ion-label><br>
+              <ion-label>$30.00</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </span>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------ShowAll Btn------------ -->
+      <div>
+        <ion-grid>
+          <ion-row size="12" style="align-items: baseline; height: fit-content;">
+            <ion-col size="9" style="text-align: start; height: fit-content;">
+              <ion-label class="tabsOfCardsText">News</ion-label>
+            </ion-col>
+            <ion-col size="3" style="align-items: end;">
+              <ion-chip class="tabsOfCardsForwardArrowText">
+                <ion-label>Show All</ion-label>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- ---------------------------------- -->
+      <!-- -----------5th Card--------------- -->
+      <ion-card class="featureProducts-card" style="background-image :url('assets/images/male.jpg')">
+        <ion-card-header>
+          <ion-card-subtitle>Get Started</ion-card-subtitle>
+          <ion-card-title>Welcome to Ionic</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Now that your app has been created, you'll want to start building out features and components. Check out
+            some
+            of the resources below for next steps.</p>
+        </ion-card-content>
+      </ion-card>
+    <!-- </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

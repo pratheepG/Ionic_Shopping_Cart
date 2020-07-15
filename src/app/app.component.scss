@@ -1,0 +1,23 @@
+
+* ::-webkit-scrollbar {
+    display: none;
+  }
+  .header{
+      height: 45px;
+     background-color: #ffffff;
+    }
+  .headerGrid {
+      background-color: #ffffff;
+      height: 40px;
+      margin-top: -18px;
+  }
+  .hdrRow {
+      margin-top: -5px;
+      align-items: center;
+      height: 40px;
+    }
+    .btnHamburg {
+      --box-shadow:none;
+      --padding-start:10;
+      font-size: 17px;
+    }

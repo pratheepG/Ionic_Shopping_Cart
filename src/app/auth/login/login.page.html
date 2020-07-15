@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  <ion-title>
+  </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding >
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Sign In</ion-card-title>
+  </ion-card-header>
+  <form #form="ngForm" (ngSubmit)="login(form)" method="post" class="loginForm">
+    <ion-item>
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input ngModel placeholder="Username or email" type="email" name="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-input ngModel placeholder="Password" type="password" name="password"></ion-input>
+    </ion-item>
+  
+    <ion-button type="submit" expand="block" color="transparent" style="background-color: #FFC0CB;">Login</ion-button>
+  </form>
+  <div class="dividerDiv">
+      <ion-item-divider>
+      </ion-item-divider> 
+      <ion-label>or</ion-label>
+      <ion-item-divider>
+      </ion-item-divider> 
+  </div>  
+  <!-- <ion-button expand="block" class="smsButton" color="success" (click)="registerModal()">
+    <ion-icon name="chatbox-ellipses-outline" item-left></ion-icon>
+      <ion-label>SMS LOGIN</ion-label>
+  </ion-button> -->
+  <ion-row size="12">
+    <ion-col size="6">
+      <ion-button expand="block" class="fbButton" color="fbBlue" (click)="registerModal()">
+        <ion-icon ios="logo-facebook" md="logo-facebook" item-left></ion-icon>
+        <ion-label> LOGIN</ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="googleButton" color="light" (click)="googleLogin()">
+        <ion-icon src="../assets/icon/googleLogo.svg" item-left></ion-icon>
+        <ion-label> LOGIN</ion-label>
+    </ion-button>
+    </ion-col>
+  </ion-row> 
+</ion-card>
+  <ion-item lines="none" class="signUpBtn">
+    <p text-center>Don't have a account?</p>
+    <ion-chip color="transparent" mode="ios" [routerLink]="['/register']">        
+      <label>Sign Up</label>     
+    </ion-chip>
+  </ion-item>
+</ion-content>
